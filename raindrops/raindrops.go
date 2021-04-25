@@ -1,7 +1,9 @@
+// package raindrops implements a variant of fiz FizzBuzz
 package raindrops
 
 import "strconv"
 
+// Convert transforms a number into raindrop sounds
 func Convert(n int) (res string) {
 	if n%3 == 0 {
 		res += "Pling"
