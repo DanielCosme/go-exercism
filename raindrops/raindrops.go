@@ -1,4 +1,4 @@
-// package raindrops implements a variant of fiz FizzBuzz
+// Package raindrops implements a variant of fiz FizzBuzz
 package raindrops
 
 import "strconv"
