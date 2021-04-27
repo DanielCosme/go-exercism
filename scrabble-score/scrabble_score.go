@@ -5,22 +5,22 @@ import "strings"
 
 // Score computes the Scrabble score for a given word
 func Score(word string) (score int) {
-	word = strings.ToLower(word)
+	word = strings.ToUpper(word)
 	for _, char := range word {
-		switch {
-		case strings.ContainsRune("aeioulnrst", char):
-			score++
-		case strings.ContainsRune("dg", char):
+		switch char {
+		case 'A', 'E', 'I', 'O', 'U', 'L', 'N', 'R', 'S', 'T':
+			score += 1
+		case 'D', 'G':
 			score += 2
-		case strings.ContainsRune("bcmp", char):
+		case 'B', 'C', 'M', 'P':
 			score += 3
-		case strings.ContainsRune("fhvwy", char):
+		case 'F', 'H', 'V', 'W', 'Y':
 			score += 4
-		case strings.ContainsRune("k", char):
+		case 'K':
 			score += 5
-		case strings.ContainsRune("jx", char):
+		case 'J', 'X':
 			score += 8
-		case strings.ContainsRune("qz", char):
+		case 'Q', 'Z':
 			score += 10
 		}
 	}
