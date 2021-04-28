@@ -7,7 +7,6 @@ import (
 
 // IsIsogram determines if a word is an isogram or not
 func IsIsogram(word string) bool {
-	res := true
 	counter := make(map[rune]int)
 	word = strings.ToLower(word)
 
@@ -18,9 +17,8 @@ func IsIsogram(word string) bool {
 
 		counter[char]++
 		if counter[char] > 1 {
-			res = false
-			break
+			return false
 		}
 	}
-	return res
+	return true
 }
